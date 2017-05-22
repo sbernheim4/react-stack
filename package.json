@@ -20,6 +20,7 @@
     "gulp-clean-css": "^3.3.1",
     "gulp-react": "^3.1.0",
     "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
     "path": "^0.12.7",
     "rename": "^1.0.4"
   },
