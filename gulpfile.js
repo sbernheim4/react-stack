@@ -1,15 +1,17 @@
 const gulp = require('gulp');
 const react = require('gulp-react');
 const browserify = require('gulp-browserify');
+// const uglify = require('gulp-uglify');
+
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 
 gulp.task('compileJSX', function () {
 	return gulp.src('./app/components/game.jsx')
 	.pipe(react())
 	.pipe (browserify())
-	// .pipe(uglify())
+	.pipe(rename('main.js'))
 	.pipe(gulp.dest('./app/public'));
 });
 
