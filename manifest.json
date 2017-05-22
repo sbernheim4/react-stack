@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "lang": "en",
+  "background_color": "#3c3c3c",
+  "start_url": "/",
+  "theme_color": "#3c3c3c",
+  "app": {
+    "launch": {
+      "web_url": "URL HERE"
+    }
+  },
+  "name": "FIRST LAST",
+  "short_name": "FIRST LAST",
+  "orientation": "portrait",
+  "display": "standalone",
+  "icons": [
+
+  ]
+}

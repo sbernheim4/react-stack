@@ -12,8 +12,13 @@ app.use(express.static(path.join(__dirname, '../app/public')));
 
 // For any get request return the index.html file
 app.get('/', function (req, res) {
-	/* Return the index.html file and hand over the routing to Angular's UI-Router */
+	/* Return the index.html file */
 	res.sendFile(path.join(__dirname, '../app/index.html'));
+});
+
+app.get('/manifest.json', function (req, res) {
+	/* Return the manifest.json file */
+	res.sendFile(path.join(__dirname, './manifest.json'));
 });
 
 
