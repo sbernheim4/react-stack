@@ -10,12 +10,13 @@ Right now this app is very simple and has limited capability. Over the coming mo
 
 #Project Structure 
 The folder structure is the following:
-
+```
 Root
-: -- app/
-: -- components/ (JSX files here)
-: -- public/ (Compiled scss and jsx files and imgs etc )
-: -- scss/
-: -- index.html
-: -- server/
-: -- gulpfile.js
+  -app/
+  -components/ (JSX files here)
+  -public/ (Compiled scss and jsx files and imgs etc )
+  -scss/
+  -index.html
+  -server/
+  -gulpfile.js
+```
