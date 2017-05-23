@@ -9,10 +9,10 @@ const rename = require('gulp-rename');
 
 gulp.task('compileJSX', function () {
 	return gulp.src('./app/components/game.jsx')
-	.pipe(react())
-	.pipe (browserify())
-	.pipe(rename('main.js'))
-	.pipe(gulp.dest('./app/public'));
+		.pipe(react())
+		.pipe (browserify())
+		.pipe(rename('main.js'))
+		.pipe(gulp.dest('./app/public'));
 });
 
 gulp.task('buildCSSProduction', function () {
