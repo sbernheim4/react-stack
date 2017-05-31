@@ -4,9 +4,8 @@ const concat = require('gulp-concat');
 
 gulp.task('buildCSS', () => {
 	return gulp.src('src/scss/*.scss')
-	.pipe(concat('App.css'))
 	.pipe(sass())
-	.pipe(gulp.dest('src/'));
+	.pipe(gulp.dest('src/css/'));
 })
 
 gulp.task('watch', () => {
