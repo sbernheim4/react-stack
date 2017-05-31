@@ -10308,9 +10308,9 @@ var _react = __webpack_require__(47);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(271);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*import './css/App.css';*/
 
 var App = function (_Component) {
 	(0, _inherits3.default)(App, _Component);
@@ -10321,18 +10321,18 @@ var App = function (_Component) {
 	}
 
 	(0, _createClass3.default)(App, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
-				'div',
-				{ className: 'App' },
+				"div",
+				{ className: "App" },
 				_react2.default.createElement(
-					'div',
-					{ className: 'App-header' },
+					"div",
+					{ className: "App-header" },
 					_react2.default.createElement(
-						'h2',
+						"h2",
 						null,
-						'Welcome to React'
+						"Welcome to React"
 					)
 				)
 			);
@@ -10378,9 +10378,9 @@ var _react = __webpack_require__(47);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(272);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*import './css/SomeOtherComponent.css'*/
 
 var SomeOtherComponent = function (_Component) {
 	(0, _inherits3.default)(SomeOtherComponent, _Component);
@@ -10397,29 +10397,29 @@ var SomeOtherComponent = function (_Component) {
 	}
 
 	(0, _createClass3.default)(SomeOtherComponent, [{
-		key: 'someFunc',
+		key: "someFunc",
 		value: function someFunc() {
 			this.setState({ timesClicked: this.state.timesClicked + 1 });
 		}
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
 			var _this2 = this;
 
 			return _react2.default.createElement(
-				'div',
-				{ className: 'SomeOtherComponent' },
+				"div",
+				{ className: "SomeOtherComponent" },
 				_react2.default.createElement(
-					'button',
-					{ className: 'button', onClick: function onClick() {
+					"button",
+					{ className: "button", onClick: function onClick() {
 							return _this2.someFunc();
 						} },
-					'Click me to see what happens'
+					"Click me to see what happens"
 				),
 				_react2.default.createElement(
-					'p',
+					"p",
 					null,
-					'Times clicked: ',
+					"Times clicked: ",
 					this.state.timesClicked
 				)
 			);
@@ -23802,18 +23802,6 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 271 */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: /Users/sbernheim/react-stack/src/css/App.css Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n| .App {\n|   text-align: center; }\n|   .App-header {");
-
-/***/ }),
-/* 272 */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: /Users/sbernheim/react-stack/src/css/SomeOtherComponent.css Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n| .SomeOtherComponent {\n|   margin: 30px;\n|   display: flex;");
 
 /***/ })
 /******/ ]);
