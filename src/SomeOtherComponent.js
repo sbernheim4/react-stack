@@ -16,12 +16,12 @@ class SomeOtherComponent extends Component {
 
 	render() {
 		return (
-			<div>
-				<button onClick={() => this.someFunc()}>
+			<div className="SomeOtherComponent">
+				<button className="button" onClick={() => this.someFunc()}>
 					Click me to see what happens
 				</button>
 
-				<p>Times clicked {this.state.timesClicked}</p>
+				<p>Times clicked: {this.state.timesClicked}</p>
 			</div>
 		);
 	}
