@@ -22,13 +22,13 @@
     "css-loader": "^0.28.4",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
-    "react-scripts": "1.0.7",
+    "nodemon": "^1.11.0",
     "style-loader": "^0.18.1"
   },
   "scripts": {
+    "start": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "webpack-watch": "webpack -w",
-    "express-server": "node ./server",
-    "dev": "concurrent --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "express-server": "nodemon ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
