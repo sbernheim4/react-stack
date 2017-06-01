@@ -1,0 +1,15 @@
+.SomeOtherComponent {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .SomeOtherComponent button {
+    width: 150px;
+    height: 55px;
+    background-color: #BADA55;
+    border: none;
+    border-radius: 5px;
+    transition: background-color .3s; }
+    .SomeOtherComponent button:hover {
+      background-color: #97ba28;
+      cursor: pointer; }
