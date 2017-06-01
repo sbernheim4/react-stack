@@ -13,8 +13,11 @@ The folder structure is the following:
 ```
 Root
 	-src/
-		-components/ (all component files here)
-		-css/ (files here get generated automatically)
+		-components/ (all component folders and files here)
+			-ComponentOne/
+				-ComponentOne.jsx
+				-ComponentOne.subcomponent.jsx
+			-...
 		-scss/ (put all your scss files here)
 		-index.js (This file imports the components and renders them -- Entry point for webpack bundling)
 	-public/

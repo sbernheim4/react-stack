@@ -10627,6 +10627,10 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _stringify = __webpack_require__(292);
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 var _getPrototypeOf = __webpack_require__(39);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -10668,15 +10672,38 @@ var SomeOtherComponent = function (_Component) {
 		var _this = (0, _possibleConstructorReturn3.default)(this, (SomeOtherComponent.__proto__ || (0, _getPrototypeOf2.default)(SomeOtherComponent)).call(this));
 
 		_this.state = {
-			timesClicked: 1
+			timesClicked: _this.getInitialValue()
 		};
 		return _this;
 	}
 
+	// The number of times the button is clicked is stored in localstorage
+
+
 	(0, _createClass3.default)(SomeOtherComponent, [{
-		key: 'someFunc',
-		value: function someFunc() {
-			this.setState({ timesClicked: this.state.timesClicked + 1 });
+		key: 'getInitialValue',
+		value: function getInitialValue() {
+			return JSON.parse(localStorage.getItem('timesClicked')) || 1;
+		}
+
+		// Every time the button is clicked, update the state variable and the value in 
+		// local storage so that it persists even if the browser is quit
+
+	}, {
+		key: 'updateValue',
+		value: function updateValue() {
+			var newValue = this.state.timesClicked + 1;
+			localStorage.setItem('timesClicked', (0, _stringify2.default)(newValue));
+			this.setState({ timesClicked: newValue });
+		}
+
+		// Reset the value of the click counter both in state and local storage
+
+	}, {
+		key: 'clearValue',
+		value: function clearValue() {
+			localStorage.setItem('timesClicked', (0, _stringify2.default)(0));
+			this.setState({ timesClicked: 0 });
 		}
 	}, {
 		key: 'render',
@@ -10689,9 +10716,16 @@ var SomeOtherComponent = function (_Component) {
 				_react2.default.createElement(
 					'button',
 					{ className: 'button', onClick: function onClick() {
-							return _this2.someFunc();
+							return _this2.updateValue();
 						} },
 					'Click me to see what happens'
+				),
+				_react2.default.createElement(
+					'button',
+					{ className: 'button', onClick: function onClick() {
+							return _this2.clearValue();
+						} },
+					'Reset value'
 				),
 				_react2.default.createElement(_componentTwo2.default, { value: this.state.timesClicked })
 			);
@@ -24192,6 +24226,29 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(293), __esModule: true };
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var core  = __webpack_require__(9)
+  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
 
 /***/ })
 /******/ ]);
