@@ -9,8 +9,6 @@
 		<!-- Makes website mobile friendly -->
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
-		<meta name="theme-color" content="#000000">
-
 		<link rel="manifest" href="manifest.json">
 		<link rel="shortcut icon" href="favicon.ico">
 
@@ -31,6 +29,10 @@
 		<div id="root"></div>
 		<div id='root2'></div>
 		<div id='root3'></div>
+
+		<!-- The bundled js file must be below where the components will render
+			 In this case the components are being rendered in the 3 divs above
+		-->
 		<script src='./bundle.js'></script>
 	  </body>
 
