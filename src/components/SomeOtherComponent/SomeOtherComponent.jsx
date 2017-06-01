@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import '../scss/SomeOtherComponent.scss';
+import ComponentTwo from './componentTwo.jsx';
+
+import '../../scss/SomeOtherComponent.scss';
 
 class SomeOtherComponent extends Component {
 	constructor() {
@@ -21,7 +23,8 @@ class SomeOtherComponent extends Component {
 					Click me to see what happens
 				</button>
 
-				<p>Times clicked: {this.state.timesClicked}</p>
+				<ComponentTwo value={this.state.timesClicked}/>
+
 			</div>
 		);
 	}

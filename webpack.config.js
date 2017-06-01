@@ -6,7 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const nano = require('cssnano');
 
 module.exports = {
-	entry: __dirname + '/src/index.js',
+	entry: __dirname + '/src/index.jsx',
 	output: {
 		path: __dirname + '/public',
 		filename: 'bundle.js'
@@ -14,7 +14,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx$/,
 				exclude: /node_modules/,
 				use: 'babel-loader'
 			},
@@ -28,7 +28,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['*', '.js', '.json', '.scss']
+		extensions: ['*', '.js', 'jsx', '.json', '.scss']
 	},
 	plugins: [
 		new ExtractTextPlugin('index.css'),

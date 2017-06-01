@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /* Import components that we want to render on the page*/
-import App from './components/App';
-import SomeOtherComponent from './components/SomeOtherComponent';
-import Game from './components/Game';
+import App from './components/App/App.jsx';
+import SomeOtherComponent from './components/SomeOtherComponent/SomeOtherComponent.jsx';
+import Game from './components/Game/Game.jsx';
 
 import './scss/normalize.scss';
 
