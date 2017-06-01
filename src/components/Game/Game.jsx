@@ -19,23 +19,30 @@ class Board extends React.Component {
 		this.state = {
 			squares: Array(9).fill(null),
 			xIsNext: true,
+			status: "Next Player: X"
 		};
 	}
 
 	handleClick(i) {
-		const squares = this.state.squares.slice();
+		const newSquares = this.state.squares.slice();
 
-		if (calculateWinner(squares) || movesLeft(!squares)) {
+		if (calculateWinner(newSquares) || movesLeft(!newSquares)) {
 			return;
 		}
 
-		squares[i] = this.state.xIsNext ? 'X' : 'O';
-		this.setState({
-			squares: squares,
-			xIsNext: !this.state.xIsNext
-		});
-		console.log(squares);
+		// Don't allow someone to go on top of where someone else has played
+		if (newSquares[i] != 'X' && newSquares[i] != 'O') {
+			
+			newSquares[i] = this.state.xIsNext ? 'X' : 'O';
 
+			this.setState({
+				squares : newSquares,
+				xIsNext : !this.state.xIsNext,
+				status: this.determineStatus()
+			});
+
+		}
+		
 	}
 
 	renderSquare(i) {
@@ -47,40 +54,58 @@ class Board extends React.Component {
 		)
 	}
 
-	render() {
-		const winner = calculateWinner(this.state.squares);
-		let status;
+	resetGame() {
+		const newSquareState = this.state.squares.slice();
 
-		if (winner) {
-			status = 'Winner ' + winner;
-		} else if (!movesLeft(this.state.squares)) {
-			status = 'Tie Game';
-		} else {
-			status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+		for (var i = 0; i < newSquareState.length; i++){
+			newSquareState[i] = '';
 		}
 
+		this.setState({
+			squares : newSquareState, 
+			xIsNext : !this.state.xIsNext,
+			status : this.determineStatus()
+		});
+	}
+
+	determineStatus() {
+		const winner = calculateWinner(this.state.squares);
+
+		if (winner) {
+			return 'Winner ' + winner;
+		} else if (!movesLeft(this.state.squares)) {
+			return 'Tie Game';
+		} else {
+			return 'Next player: ' + this.state.xIsNext ? 'X' : 'O';
+		}
+	}
+
+	render() {
 		return (
 			<div>
-			<div className="status">{status}</div>
+				<p className="status">{this.state.status}</p>
 
-			<div className="board-row">
-			{this.renderSquare(0)}
-			{this.renderSquare(1)}
-			{this.renderSquare(2)}
-			</div>
+				<div className="board-row">
+					{this.renderSquare(0)}
+					{this.renderSquare(1)}
+					{this.renderSquare(2)}
+				</div>
 
-			<div className="board-row">
-			{this.renderSquare(3)}
-			{this.renderSquare(4)}
-			{this.renderSquare(5)}
-			</div>
+				<div className="board-row">
+					{this.renderSquare(3)}
+					{this.renderSquare(4)}
+					{this.renderSquare(5)}
+				</div>
 
-			<div className="board-row">
-			{this.renderSquare(6)}
-			{this.renderSquare(7)}
-			{this.renderSquare(8)}
-			</div>
+				<div className="board-row">
+					{this.renderSquare(6)}
+					{this.renderSquare(7)}
+					{this.renderSquare(8)}
+				</div>
 
+				<button onClick={() => this.resetGame()}>
+					New Game
+				</button>
 			</div>
 		);
 	}
