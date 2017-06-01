@@ -19,7 +19,7 @@ app.get('/*', (req, res) => {
 		console.log(chalk.yellow("GET: " + req.originalUrl));
 	}
 
-	res.sendFile(path.join(__dirname, 'index.html'));
+	res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 

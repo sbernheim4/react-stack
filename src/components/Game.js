@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/game.css';
+import '../scss/game.scss';
 
 function Square(props) {
 	return (

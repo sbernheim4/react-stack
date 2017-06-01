@@ -6,7 +6,7 @@ import App from './components/App';
 import SomeOtherComponent from './components/SomeOtherComponent';
 import Game from './components/Game';
 
-import './css/normalize.css';
+import './scss/normalize.scss';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<SomeOtherComponent />, document.getElementById('root2'));
