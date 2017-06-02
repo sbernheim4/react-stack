@@ -32,17 +32,17 @@ class Board extends React.Component {
 
 		// Don't allow someone to go on top of where someone else has played
 		if (newSquares[i] != 'X' && newSquares[i] != 'O') {
-			
+
 			newSquares[i] = this.state.xIsNext ? 'X' : 'O';
 
 			this.setState({
 				squares : newSquares,
 				xIsNext : !this.state.xIsNext,
-				status: this.determineStatus()
+				status: this.determineStatus(newSquares)
 			});
 
 		}
-		
+
 	}
 
 	renderSquare(i) {
@@ -62,21 +62,21 @@ class Board extends React.Component {
 		}
 
 		this.setState({
-			squares : newSquareState, 
+			squares : newSquareState,
 			xIsNext : !this.state.xIsNext,
-			status : this.determineStatus()
+			status : this.determineStatus(newSquareState)
 		});
 	}
 
-	determineStatus() {
-		const winner = calculateWinner(this.state.squares);
+	determineStatus(updatedSquares) {
+		const winner = calculateWinner(updatedSquares);
 
 		if (winner) {
 			return 'Winner ' + winner;
-		} else if (!movesLeft(this.state.squares)) {
+		} else if (!movesLeft(updatedSquares)) {
 			return 'Tie Game';
 		} else {
-			return 'Next player: ' + this.state.xIsNext ? 'X' : 'O';
+			return 'Next Player: '.concat(this.state.xIsNext ? 'O' : 'X');
 		}
 	}
 
@@ -151,7 +151,7 @@ function calculateWinner(squares) {
 // Returns true if there are still moves to be made and false if no more moves are possible
 function movesLeft(squares){
 	for (let i = 0; i < squares.length; i++) {
-		if (squares[i] === null) {
+		if (squares[i] === null || squares[i] === '') {
 			return true;
 		}
 	}
