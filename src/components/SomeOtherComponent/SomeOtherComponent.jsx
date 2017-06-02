@@ -17,7 +17,7 @@ class SomeOtherComponent extends Component {
 		return JSON.parse(localStorage.getItem('timesClicked')) || 1;
 	}
 
-	// Every time the button is clicked, update the state variable and the value in 
+	// Every time the button is clicked, update the state variable and the value in
 	// local storage so that it persists even if the browser is quit
 	updateValue() {
 		let newValue = this.state.timesClicked + 1
@@ -28,7 +28,7 @@ class SomeOtherComponent extends Component {
 	// Reset the value of the click counter both in state and local storage
 	clearValue() {
 		localStorage.setItem('timesClicked', JSON.stringify(0));
-		this.setState({timesClicked : 0});	
+		this.setState({timesClicked : 0});
 	}
 
 	render() {
@@ -39,7 +39,7 @@ class SomeOtherComponent extends Component {
 				</button>
 
 				<button className='button' onClick={() => this.clearValue()}>
-					Reset value 
+					Reset value
 				</button>
 
 				<ComponentTwo value={this.state.timesClicked}/>

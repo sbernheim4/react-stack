@@ -10718,7 +10718,7 @@ var SomeOtherComponent = function (_Component) {
 			return JSON.parse(localStorage.getItem('timesClicked')) || 1;
 		}
 
-		// Every time the button is clicked, update the state variable and the value in 
+		// Every time the button is clicked, update the state variable and the value in
 		// local storage so that it persists even if the browser is quit
 
 	}, {
