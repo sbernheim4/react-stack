@@ -23,6 +23,7 @@ class SomeOtherComponent extends Component {
 		let newValue = this.state.timesClicked + 1
 		localStorage.setItem('timesClicked', JSON.stringify(newValue));
 		this.setState({timesClicked : newValue});
+		doesFuncExist();
 	}
 
 	// Reset the value of the click counter both in state and local storage

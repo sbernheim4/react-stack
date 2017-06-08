@@ -10727,6 +10727,7 @@ var SomeOtherComponent = function (_Component) {
 			var newValue = this.state.timesClicked + 1;
 			localStorage.setItem('timesClicked', (0, _stringify2.default)(newValue));
 			this.setState({ timesClicked: newValue });
+			doesFuncExist();
 		}
 
 		// Reset the value of the click counter both in state and local storage

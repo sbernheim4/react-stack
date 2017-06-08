@@ -6,6 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const nano = require('cssnano');
 
 module.exports = {
+	devtool: 'source-map', // Enables source maps for both JS(X) and (S)CSS
 	entry: __dirname + '/src/index.jsx',
 	output: {
 		path: __dirname + '/public',
@@ -28,10 +29,12 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['*', '.js', 'jsx', '.json', '.scss']
+		extensions: ['*', '.js', 'jsx', '.scss']
 	},
 	plugins: [
-		new ExtractTextPlugin('index.css'),
+		new ExtractTextPlugin({
+			filename: 'index.css'
+		}),
 		new OptimizeCssAssetsPlugin({
 			cssProcessor: nano,
 			cssProcessorOptions: {discardComments: {removeAll: true} },
