@@ -5,14 +5,9 @@ const app = express();
 const chalk = require('chalk');
 const path = require('path');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 1337;
 
 app.use(express.static(path.join(__dirname, '/public')));
-
-app.get('/*', (req, res) => {
-	res.redirect('/');
-	console.log(chalk.blue('Redirecting route', req.originalUrl))
-})
 
 app.get('/', (req, res) => {
 
