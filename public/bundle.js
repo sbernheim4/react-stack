@@ -10437,7 +10437,7 @@ var config = {
 		read_key: 'NDtZpEwPBcFycscf2ul8yu9CgUk4goZCSc3U66YKbhL7nOMsIS'
 	},
 	object: {
-		slug: 'my-fist-article'
+		slug: 'my-first-article'
 	}
 };
 
