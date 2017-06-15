@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /* Import components that we want to render on the page*/
-import App from './components/App/App.jsx';
-import SomeOtherComponent from './components/SomeOtherComponent/SomeOtherComponent.jsx';
-import Game from './components/Game/Game.jsx';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Header from './components/Header/Header.jsx';
+import Buttons from './components/Buttons/Buttons.jsx';
+import TicTacToe from './components/TicTacToe/TicTacToe.jsx';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<SomeOtherComponent />, document.getElementById('root2'));
-ReactDOM.render(<Game />, document.getElementById('root3'));
+ReactDOM.render(<Navbar />, document.getElementById('Navbar'));
+ReactDOM.render(<Header />, document.getElementById('Header'));
+ReactDOM.render(<Buttons />, document.getElementById('Button'));
+ReactDOM.render(<TicTacToe />, document.getElementById('TicTacToe'));

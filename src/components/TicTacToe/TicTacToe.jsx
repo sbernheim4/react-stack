@@ -111,7 +111,7 @@ class Board extends React.Component {
 	}
 }
 
-class Game extends React.Component {
+class TicTacToe extends React.Component {
 	render() {
 		return (
 			<div className="game">
@@ -158,4 +158,4 @@ function movesLeft(squares){
 	return false;
 }
 
-export default Game;
+export default TicTacToe;
