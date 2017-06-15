@@ -5,9 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const nano = require('cssnano');
 
+const glob = require('glob');
+
 module.exports = {
 	devtool: 'source-map', // Enables source maps for both JS(X) and (S)CSS
-	entry: __dirname + '/src/index.jsx',
+	entry: glob.sync('./src/components/**/*.jsx'),
 	output: {
 		path: __dirname + '/public',
 		filename: 'bundle.js'
