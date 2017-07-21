@@ -25,7 +25,6 @@ Root
 		-index.html
 		-manifest.json
 		-favicon.ico
-	-gulpfile.js
 	-webpack.config.js (bundles up all the js files and stores it in the public folder)
 	-server.js (entry point for the application to connect to)
 ```

@@ -7,7 +7,7 @@ const path = require('path');
 
 const port = process.env.PORT || 1337;
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.resolve('/public')));
 
 app.get('/', (req, res) => {
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 		console.log(chalk.yellow("GET: " + req.originalUrl));
 	}
 
-	res.sendFile(path.join(__dirname, 'public/index.html'));
+	res.sendFile(path.resolve('public/index.html'));
 
 });
 
